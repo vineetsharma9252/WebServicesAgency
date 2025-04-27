@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
 import { FiMenu, FiX } from 'react-icons/fi';
+import './NavBar.css';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,14 +9,52 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">Web Agency</div>
+        <Link to="/" className="navbar-logo">
+          <span className="logo-text">Web</span>
+          <span className="logo-highlight">Agency</span>
+        </Link>
+        
         <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FiX /> : <FiMenu />}
+          {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
         </div>
-        <ul className={menuOpen ? "navbar-links active" : "navbar-links"}>
-          <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
-          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+        
+        <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
+          <li className="nav-item">
+            <Link 
+              to="/" 
+              className="nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link 
+              to="/about" 
+              className="nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link 
+              to="/contact" 
+              className="nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link 
+              to="/services" 
+              className="nav-link special"
+              onClick={() => setMenuOpen(false)}
+            >
+              Our Services
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

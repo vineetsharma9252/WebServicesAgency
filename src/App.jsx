@@ -5,6 +5,10 @@ import Home from './components/Home';
 import About from './components/AboutUs';
 import Contact from './components/ContactUs';
 import Testimonials from './components/Testimonial';
+import WebDevelopment from './components/WebDevelopment';
+import MachineLearning from './components/MachineLearning';
+import MobileAppDevelopment from './components/MobileAppDevelopment';
+import ServicesPage from './components/ServicesPage';
 import './App.css';
 
 function App() {
@@ -17,6 +21,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/services/web-development" element={<WebDevelopment />} />
+        <Route path="/services/machine-learning" element={<MachineLearning />} />
+        <Route path="/services/mobile-apps" element={<MobileAppDevelopment />} />
+        <Route path="/services" element={<ServicesPage />} />
         </Routes>
       </main>
       <Footer />
