@@ -1,53 +1,368 @@
+/* Base Styles */
 .about {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #333;
-  text-align: center;
-  padding: 4rem 2rem;
-  margin-top: 20px;
+  line-height: 1.6;
 }
 
-.about-intro {
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/about-hero-pattern.png') center/cover;
+  opacity: 0.1;
+}
+
+.hero-content {
   max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.about-description {
-  font-size: 1.2rem;
-  line-height: 1.6;
+/* Our Story Section */
+.about-story {
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.story-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-story h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.about-story p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
   color: #555;
 }
 
+.milestones {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.milestone {
+  text-align: center;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6e8efb;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Values Section */
+.values-section {
+  padding: 6rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.values-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.value-card {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.value-card p {
+  color: #666;
+}
+
+/* Team Section */
 .team-section {
-  margin-top: 4rem;
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .team-member {
-  background: #f9f9f9;
-  padding: 2rem;
+  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
 }
 
 .team-member:hover {
   transform: translateY(-10px);
 }
 
-.team-img {
-  width: 100px;
-  height: 100px;
+.member-image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
   border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #f1f1f1;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(110, 142, 251, 0.8);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.team-member:hover .social-links {
+  opacity: 1;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.position {
+  color: #6e8efb;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
-h2 {
+.bio {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.team-cta {
+  margin-top: 4rem;
+}
+
+.team-cta p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.cta-button {
+  background-color: #6e8efb;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #5a7bf0;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 6rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.testimonial-slider {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background-color: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 10px;
   margin-bottom: 2rem;
+}
+
+blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '"';
+  font-size: 3rem;
+  color: #6e8efb;
+  opacity: 0.3;
+  position: absolute;
+}
+
+blockquote::before {
+  top: -1.5rem;
+  left: -1rem;
+}
+
+blockquote::after {
+  bottom: -3rem;
+  right: -1rem;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.client-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-name {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.2rem;
+}
+
+.client-company {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .milestone {
+    min-width: 150px;
+    margin-bottom: 1rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
